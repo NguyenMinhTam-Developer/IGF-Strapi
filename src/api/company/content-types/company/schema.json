@@ -23,6 +23,12 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "company"
+    },
+    "invesment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invesment.invesment",
+      "mappedBy": "company"
     }
   }
 }

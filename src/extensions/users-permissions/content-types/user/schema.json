@@ -76,6 +76,12 @@
       "relation": "oneToOne",
       "target": "api::company.company",
       "mappedBy": "user"
+    },
+    "invesment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invesment.invesment",
+      "mappedBy": "user"
     }
   }
 }

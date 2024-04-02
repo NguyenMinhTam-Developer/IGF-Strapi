@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startup": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::startup.startup"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "stage": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stage.stage",
+      "inversedBy": "campaigns"
+    },
+    "status": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status.status",
+      "inversedBy": "campaigns"
+    },
+    "tartgetAmount": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "equityOffered": {
+      "type": "decimal",
+      "required": true,
+      "max": 100,
+      "min": 0
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "invesments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invesment.invesment",
+      "mappedBy": "campaign"
+    }
+  }
+}
